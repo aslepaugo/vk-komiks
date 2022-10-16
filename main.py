@@ -6,7 +6,7 @@ import urllib
 from dotenv import load_dotenv
 from files_helper import get_extension_by_url, save_image_from_url
 from vk_api_helper import call_vk_method, publish_vk_wall_image
-from xkcd_helper import get_comics_message, get_comics_url, get_last_comics_number
+from xkcd_helper import download_xkcd_comics
 
 
 def main() -> None:
@@ -15,12 +15,7 @@ def main() -> None:
     group_id = os.getenv('GROUP_ID')
 
     try:
-        comic_image_id = randint(1, get_last_comics_number())
-        comic_url = get_comics_url(comic_image_id)
-        comic_message = get_comics_message(comic_image_id)
-        comic_file_ext = get_extension_by_url(comic_url)
-        comic_file_name = f"{comic_image_id}{comic_file_ext}"
-        save_image_from_url(comic_url, comic_file_name)
+        comic_file_name, comic_message = download_xkcd_comics()
     except requests.HTTPError as error:
         print('An error occuured while getting comics\n', error)
         return
