@@ -21,8 +21,7 @@ def main() -> None:
         return
 
     try:
-        wall_upload_server = call_vk_method(method_name='photos.getWallUploadServer', access_token=access_token)
-        upload_url = wall_upload_server['upload_url']
+        upload_url = call_vk_method(method_name='photos.getWallUploadServer', access_token=access_token)['upload_url']
         publish_vk_wall_image(
             file_name=comic_file_name, 
             upload_url=upload_url, 
