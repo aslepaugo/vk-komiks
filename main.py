@@ -1,7 +1,7 @@
 import os
 from random import randint
 import requests
-import urllib
+
 
 from dotenv import load_dotenv
 from files_helper import get_extension_by_url, save_image_from_url
