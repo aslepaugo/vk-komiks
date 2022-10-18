@@ -25,7 +25,7 @@ def call_vk_method(method_name: str, access_token: str, method_params: dict={}):
     return response.json()['response']
 
 
-def publish_vk_wall_image(file_name: str, upload_url: str, access_token: str, message: str, group_id: int) -> None:
+def publish_vk_wall_image(file_name: str, upload_url: str, access_token: str, message: str, group_id: str) -> None:
     with open(file_name, 'rb') as image:
         files = {
             'photo': image,
