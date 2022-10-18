@@ -32,11 +32,11 @@ def publish_vk_wall_image(file_name: str, upload_url: str, access_token: str, me
         }
         response = requests.post(upload_url, files=files)
         response.raise_for_status()
-        publish_settings = response.json()
+        publishing_settings = response.json()
     photo_save_params = {
-        "server": publish_settings['server'],
-        "photo": publish_settings['photo'],
-        "hash": publish_settings['hash'],
+        "server": publishing_settings['server'],
+        "photo": publishing_settings['photo'],
+        "hash": publishing_settings['hash'],
     }
     response_save_photo = call_vk_method(
         method_name='photos.saveWallPhoto', 
