@@ -38,13 +38,13 @@ def publish_vk_wall_image(file_name: str, upload_url: str, access_token: str, me
         "photo": publishing_settings['photo'],
         "hash": publishing_settings['hash'],
     }
-    response_save_photo = call_vk_method(
+    photo_save_response = call_vk_method(
         method_name='photos.saveWallPhoto', 
         access_token=access_token, 
         method_params=photo_save_params
     )
-    owner_id = response_save_photo[0]['owner_id']
-    media_id = response_save_photo[0]['id']
+    owner_id = photo_save_response[0]['owner_id']
+    media_id = photo_save_response[0]['id']
     wall_post_params = {
         "owner_id": f"-{group_id}",
         "from_group": 1,
