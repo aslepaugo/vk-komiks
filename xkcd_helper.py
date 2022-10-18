@@ -15,5 +15,5 @@ def download_xkcd_comics() -> tuple:
     comic_file_name = f"{comics_number}{comic_file_ext}"
     save_image_from_url(comics_data['img'], comic_file_name)
 
-    return (comic_file_name, comics_data['alt'])
+    return comic_file_name, comics_data['alt']
 
