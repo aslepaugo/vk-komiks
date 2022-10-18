@@ -23,8 +23,8 @@ Get your VK group id [here](https://regvk.com/id/).
 Create file `.env` with the following environment variables.
 
 ```shell
-ACCESS_TOKEN=<vk_api_access_token>
-GROUP_ID=<community_id>
+VK_ACCESS_TOKEN=<vk_api_access_token>
+VK_GROUP_ID=<community_id>
 ```
 
 To run the script, type:

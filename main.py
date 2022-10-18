@@ -11,8 +11,8 @@ from xkcd_helper import download_xkcd_comics
 
 def main() -> None:
     load_dotenv()
-    access_token = os.getenv('ACCESS_TOKEN')
-    group_id = os.getenv('GROUP_ID')
+    access_token = os.getenv('VK_ACCESS_TOKEN')
+    group_id = os.getenv('VK_GROUP_ID')
 
     try:
         comic_file_name, comic_message = download_xkcd_comics()
